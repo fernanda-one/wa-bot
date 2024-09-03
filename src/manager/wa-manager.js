@@ -35,7 +35,7 @@ class WaServiceManager {
   }
 
   getActiveServices() {
-    return Object.keys(this.services.getStatus());
+    return Object.keys(this.services);
   }
 
   cleanupInactiveServices() {
