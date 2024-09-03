@@ -1,5 +1,5 @@
 const responseSuccess = (res, status_code = 200, message, data = null) => {
-  return res.status(status_code).json({
+  return res.status(200).json({
     status_code,
     message,
     data
@@ -7,7 +7,7 @@ const responseSuccess = (res, status_code = 200, message, data = null) => {
 };
 
 const responseError = (res, error, status_code = 500) => {
-  return res.status(status_code).json({
+  return res.status(200).json({
     status_code,
     error
   });

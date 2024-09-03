@@ -1,19 +1,15 @@
-version: "3.8"
-
 services:
   app:
-    container_name: whatsapp_web_api_ari
+    container_name: whatsapp_service
     build: .
-    restart: always
+    restart: on-failure
     ports:
-      - "3300:3300"
+      - '3300:3300'
     environment:
       - API_KEY=your_global_api_key_here
-      # - BASE_WEBHOOK_URL=http://localhost:3400/localCallbackExample
-      # - ENABLE_LOCAL_CALLBACK_EXAMPLE=TRUE
       - SET_MESSAGES_AS_SEEN=TRUE
       - DISABLED_CALLBACKS=message_ack|message_reaction
       - ENABLE_SWAGGER_ENDPOINT=TRUE |
     volumes:
-      - ./sessions:/usr/src/app/sessions # Mount the local ./sessions/ folder to the container's /usr/src/app/sessions folder
-      - ./logs:/usr/src/app/logs # Mount the local ./logs/ folder to the container's /usr/src/app/logs folder
+      - ./sessions:/usr/src/app/sessions
+      - ./logs:/usr/src/app/logs

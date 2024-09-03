@@ -1,6 +1,7 @@
 node_modules
 sessions
 
+src/logs
 .vscode
 package-*
 
